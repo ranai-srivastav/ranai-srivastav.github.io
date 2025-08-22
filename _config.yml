@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "Ranai Srivastav"
   avatar : "/assets/images/bio-picture.jpg"
-  bio    : "Robotics (MRSD) @ Carnegie Mellon University &verbar; Perception, State Estimation, and Robot Decision Making &verbar;"
+  bio    : "Robotics (MRSD) @ Carnegie Mellon University &#124; Perception, State Estimation, and Robot Decision Making &#124; "
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
