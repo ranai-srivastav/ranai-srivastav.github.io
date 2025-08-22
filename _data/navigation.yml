@@ -2,9 +2,11 @@ main:
   - title: "About Me"
     url: /
     description: "A brief introduction of my interests"
-  - title: "Blog"
-    url: /posts/
-    description: "Technical writings"
+
   - title: "Projects"
     url: /pages/projects
     description: "Projects I'm excited to tell you about"
+
+  - title: "Blog"
+    url: /posts/
+    description: "Technical writings"
