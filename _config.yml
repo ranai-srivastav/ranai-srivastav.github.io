@@ -16,7 +16,7 @@
 title: Ranai's website
 email: ranaisrivastav <at> gmail <dot> com 
 description: >- # this means to ignore newlines until "baseurl:"
-  Robotics (MRSD) @ Carnegie Mellon University \| Perception, State Estimation, and Robot Decision Making \|
+  Robotics (MRSD) @ Carnegie Mellon University &verbar; Perception, State Estimation, and Robot Decision Making &verbar;
 github_username: ranai-srivastav
 minimal_mistakes_skin: dirt
 search: true
@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "Ranai Srivastav"
   avatar : "/assets/images/bio-picture.jpg"
-  bio    : "Robotics (MRSD) @ Carnegie Mellon University \| Perception, State Estimation, and Robot Decision Making \|"
+  bio    : "Robotics (MRSD) @ Carnegie Mellon University &verbar; Perception, State Estimation, and Robot Decision Making &verbar;"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
