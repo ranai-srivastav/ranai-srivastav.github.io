@@ -1,0 +1,35 @@
+---
+title: Pytorch/Numpy Gotchas
+---
+
+## Purpose
+While there are plenty of good tutorials on the pytorch website itself and on other places on the internet, this is a running list of things in pytorch that confused me initially
+
+___________________
+
+1. **Intuition about Dimensions**
+  - `torch.ones((4, ))` is a 1D tensort with 4 elements
+  - `torch.ones((2, 3))` is a 2D tensor with 2 rows and 3 columns
+  - `torch.ones((2, 3, 4))` is a 3D tensor with 2 matrices stacked on top of each other (depth) each with 3 rows and 4 columns
+  - `torch.ones((2, 3, 4, 5))` is a 4D tensor with 2 "images". Each image has 3 channels (RGB) and each image has 4 rows and 5 columns.
+  - For images 2+ dimensions, rows refer to y coordinates and columns refer to x coordinates.
+2. **Axes**
+    - Books can be written on the errors caused by incorrectly using axes but they can offer signficant code readability and speedups when vectorizing code.
+    - This offers intuition fro a geometric standpoint which is why words in "*italicized quotes*" refer to traditional 3D dimensions.  
+    - **For 1D array** `torch.ones((4, ))`
+        - `axis = 0` refers to the only possible axis
+    - **For 2D arrays** `torch.ones((2, 3))`
+        - `axis=0` goes "*column*"-wise so the action is performed across each entire column. Returns an array `[2, 2, 2]` of size `(3, )` if summed.
+        - `axis=1` goes "*row*"-wise so the action is performed across each entire row. Returns an array `[3, 3]` of size `(2,)` if summed.
+    - **For 3D arrays** `torch.ones((2, 3, 4))`
+        - `axis=0` refers to "*depth*" so the action is performed across "all the matrices" if you read shape as per point 1. Returns a matrix of size `[3, 4]` where each element is 2 if summed.  
+        - `axis=1` refers to "*columns*" so the action is performed over "all the columns of all the matrices" if you read shape as per point 1. Returns a matrix of size `[2, 4]` where each element is 3 if summed. 
+        - `axis=2` refers to "*rows*" so the action is performed over "all the rows of all the matrices" if you read shape as per point 1. Returns a matrix of size `[2, 3]` where each element is 4 if summed.
+    - **For 4D arrays** `torch.ones((2, 3, 4, 5))`
+      - `axis=0` refers to "*batches*" so the action is performed across "all images in a batch" if you read shape as per point 1. Returns a matrix of size `[3, 4, 5]` where each element is 2 if summed.  
+      - `axis=1` refers to "*channels*" so the action is performed over "all channels across all images in a batch" if you read shape as per point 1. Returns a matrix of size `[2, 4, 5]` where each element is 3 if summed. 
+      - `axis=2` refers to "*columns*" so the action is performed over "all the columns of each channel of each image in a batch" if you read shape as per point 1. Returns a matrix of size `[2, 3, 5]` where each element is 4 if summed.
+      - `axis=3` refers to "*rows*" so the action is performed over "all the rows across each channel of each image in a batch" if you read shape as per point 1. Returns a matrix of size `[2, 3, 4]` where each element is 5 if summed.
+    - Using our pattern recognition skills, we can understand axes by extrapolating that
+      - Think of each new dimension as a collection of the previous dimensions
+      - When doing an operation, the provided axis index will do that operation across the corresponding dimension in the the input tensor's shape. The output tensor will have that dimension missing.

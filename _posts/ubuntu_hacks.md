@@ -1,0 +1,14 @@
+---
+title: Ubuntu Hacks
+---
+
+## Purpose
+
+This post is a running list of things that have greatly improved my experience on Linux
+
+____________
+
+- `gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled-on-external-mouse`
+    - Disables the touchpad when an external mouse is connected. Isn't that NEAT?!
+- Aliases
+    - I am a huge proponent of using liases for everything from commonly ssh'd into machines to paths to `.AppImage` files.
