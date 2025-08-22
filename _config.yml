@@ -68,9 +68,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ranai-srivastav"
-    # - label: "Instagram"
-    #   icon: "fab fa-fw fa-instagram"
-    #   url: "https://instagram.com/"
+    - label: "Project Website"
+      icon: "fa fa-free-code-camp"
+      url: "https://mrsdprojects.ri.cmu.edu/2025teamg"
 
 footer:
   links:
@@ -78,7 +78,7 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
     - label: "Project Website"
-      icon: "fab fa-solid fa-fire"
+      icon: "fa fa-free-code-camp"
       url: "https://mrsdprojects.ri.cmu.edu/2025teamg"
 
 defaults:
